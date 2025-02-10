@@ -1,0 +1,291 @@
+/* Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.wishes-hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none; /* Ensure no background image */
+}
+
+.wishes-hero video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    object-fit: cover;
+}
+
+/* Dark overlay */
+.wishes-hero::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(16, 12, 51, 0.7);
+    z-index: -1;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    z-index: 1;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: normal;
+}
+
+.hero-content .date {
+    font-size: 1.8rem;
+    opacity: 0.9;
+}
+
+/* Letter Section */
+.wishes-letter {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 4rem 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.letter-content {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #0a192f;
+}
+
+.letter-content p {
+    margin-bottom: 1.5rem;
+}
+
+/* Memory Gallery */
+.memory-gallery {
+    padding: 4rem 2rem;
+    background: rgba(10, 25, 47, 0.9);
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.memory-gallery h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.gallery-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.gallery-item.flipped .gallery-inner {
+    transform: rotateY(180deg);
+}
+
+.gallery-front,
+.gallery-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.gallery-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.gallery-back {
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.2rem;
+    transform: rotateY(180deg);
+    border-radius: 10px;
+}
+
+/* Video Message */
+.video-message {
+    padding: 4rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.video-message h2 {
+    color: #0a192f;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.video-container video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Wishes Cards */
+.birthday-wishes {
+    padding: 4rem 2rem;
+    background: rgba(10, 25, 47, 0.9);
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.wishes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.wishes-container h2 {
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.wish-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.wish-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.wish-card:hover {
+    transform: translateY(-5px);
+}
+
+.wish-card i {
+    font-size: 2.5rem;
+    color: #8892b0;
+    margin-bottom: 1rem;
+}
+
+/* Closing Message */
+.closing-message {
+    padding: 6rem 2rem;
+    text-align: center;
+    color: white;
+    background: rgba(10, 25, 47, 0.8);
+    position: relative;
+    z-index: 1;
+}
+
+.message-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.message-content p {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.signature {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.5rem !important;
+    color: #8892b0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .wishes-letter {
+        margin: 1rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .wish-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .hero-content h1,
+    .hero-content .date,
+    .gallery-item,
+    .wish-card {
+        animation: none;
+        transition: none;
+    }
+}
