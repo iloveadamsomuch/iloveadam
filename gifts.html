@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Gifts - Adam's Special Day!</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="gifts.css">
+</head>
+<body>
+    <!-- Warning Modal -->
+    <div id="warningModal" class="modal">
+        <div class="modal-content">
+            <h2>⚠️ Special Message ⚠️</h2>
+            <p>ONLY OPEN THIS MESSAGE THE DAY WE CELEBRATE YOUR BIRTHDAY.</p>
+            <div class="modal-buttons">
+                <button onclick="window.location.href='index.html'" class="home-btn">
+                    <i class="fas fa-home"></i> Homepage
+                </button>
+                <button onclick="proceedToGifts()" class="proceed-btn">
+                    <i class="fas fa-gift"></i> Proceed
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content (initially hidden) -->
+    <div id="mainContent" style="display: none;">
+        <video autoplay muted loop id="myVideo">
+            <source src="img/vdbg.MP4" type="video/mp4">
+        </video>
+        <header>
+            <nav>
+                <div class="logo">T&A</div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#">Gallery</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="gifts-container">
+                <h1>Your Birthday Gifts 🎁</h1>
+                <div class="gifts-grid">
+                    <div class="gift-card">
+                        <div class="gift-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>Gift #1</h3>
+                        <p>A special surprise just for you...</p>
+                        <button class="reveal-btn" onclick="alert('🎈 First gift revealed! 🎈')">Open Me!</button>
+                    </div>
+
+                    <div class="gift-card">
+                        <div class="gift-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Gift #2</h3>
+                        <p>Something from the heart...</p>
+                        <button class="reveal-btn" onclick="alert('💝 Second gift revealed! 💝')">Open Me!</button>
+                    </div>
+
+                    <div class="gift-card">
+                        <div class="gift-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Gift #3</h3>
+                        <p>A little something special...</p>
+                        <button class="reveal-btn" onclick="alert('✨ Third gift revealed! ✨')">Open Me!</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Made with 𖹭 for Adam by Natasha</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Show modal when page loads
+        window.onload = function() {
+            document.getElementById('warningModal').style.display = 'flex';
+        }
+
+        // Function to proceed to gifts
+        function proceedToGifts() {
+            document.getElementById('warningModal').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
