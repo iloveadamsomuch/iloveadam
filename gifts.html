@@ -6,96 +6,148 @@
     <title>Birthday Gifts - Adam's Special Day!</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="gifts.css">
 </head>
 <body>
+    <div class="confetti" id="confetti"></div>
+
     <!-- Warning Modal -->
     <div id="warningModal" class="modal">
         <div class="modal-content">
             <h2>⚠️ Special Message ⚠️</h2>
             <p>ONLY OPEN THIS MESSAGE THE DAY WE CELEBRATE YOUR BIRTHDAY.</p>
             <div class="modal-buttons">
-                <button onclick="window.location.href='index.html'" class="home-btn">
+                <button onclick="window.location.href='index.html'" class="btn home-btn">
                     <i class="fas fa-home"></i> Homepage
                 </button>
-                <button onclick="proceedToGifts()" class="proceed-btn">
+                <button onclick="proceedToGifts()" class="btn proceed-btn">
                     <i class="fas fa-gift"></i> Proceed
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- Main Content (initially hidden) -->
+    <!-- Main Content -->
     <div id="mainContent" style="display: none;">
-        <video autoplay muted loop id="myVideo">
-            <source src="img/vdbg.MP4" type="video/mp4">
-        </video>
         <header>
             <nav>
                 <div class="logo">T&A</div>
                 <div class="nav-links">
                     <a href="index.html">Home</a>
-                    <a href="#about">About Us</a>
-                    <a href="#">Gallery</a>
-                    <a href="#contact">Contact</a>
+                    <a href="toAdam.html">To: Adam</a>
+                    <a href="itinerary.html">Itinerary</a>
+                    <a href="friends.html">Friends</a>
                 </div>
             </nav>
         </header>
 
-        <main>
-            <div class="gifts-container">
-                <h1>Your Birthday Gifts 🎁</h1>
-                <div class="gifts-grid">
-                    <div class="gift-card">
-                        <div class="gift-icon">
-                            <i class="fas fa-gift"></i>
-                        </div>
-                        <h3>Gift #1</h3>
-                        <p>A special surprise just for you...</p>
-                        <button class="reveal-btn" onclick="alert('🎈 First gift revealed! 🎈')">Open Me!</button>
+        <div class="gifts-container">
+            <h1>Your Birthday Gifts</h1>
+            
+            <div class="gifts-grid">
+                <div class="gift-card">
+                    <div class="gift-icon">
+                        <i class="fas fa-gift"></i>
                     </div>
+                    <h3>Gift #1</h3>
+                    <p>A special surprise just for you...</p>
+                    <button class="reveal-btn" onclick="openGiftModal('Gift #1', 'A special surprise just for you...')">Open Me!</button>
+                </div>
 
-                    <div class="gift-card">
-                        <div class="gift-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h3>Gift #2</h3>
-                        <p>Something from the heart...</p>
-                        <button class="reveal-btn" onclick="alert('💝 Second gift revealed! 💝')">Open Me!</button>
+                <div class="gift-card">
+                    <div class="gift-icon">
+                        <i class="fas fa-heart"></i>
                     </div>
+                    <h3>Gift #2</h3>
+                    <p>Something from the heart...</p>
+                    <button class="reveal-btn" onclick="openGiftModal('Gift #2', 'Something from the heart...')">Open Me!</button>
+                </div>
 
-                    <div class="gift-card">
-                        <div class="gift-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h3>Gift #3</h3>
-                        <p>A little something special...</p>
-                        <button class="reveal-btn" onclick="alert('✨ Third gift revealed! ✨')">Open Me!</button>
+                <div class="gift-card">
+                    <div class="gift-icon">
+                        <i class="fas fa-star"></i>
                     </div>
+                    <h3>Gift #3</h3>
+                    <p>A little something special...</p>
+                    <button class="reveal-btn" onclick="openGiftModal('Gift #3', 'A little something special...')">Open Me!</button>
                 </div>
             </div>
-        </main>
+        </div>
 
         <footer>
             <p>Made with 𖹭 for Adam by Natasha</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
         </footer>
     </div>
 
+    <!-- Gift Modal -->
+    <div id="giftModal" class="modal">
+        <div class="modal-content">
+            <h2 id="giftTitle">Gift</h2>
+            <p id="giftDescription">Gift description here...</p>
+            <button onclick="closeGiftModal()" class="btn home-btn">Close</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.37.5/tsparticles.min.js"></script>
     <script>
         // Show modal when page loads
         window.onload = function() {
             document.getElementById('warningModal').style.display = 'flex';
+            initConfetti();
+        }
+
+        // Initialize confetti
+        function initConfetti() {
+            tsParticles.load("confetti", {
+                particles: {
+                    number: {
+                        value: 50
+                    },
+                    color: {
+                        value: ["#FFD700", "#FF69B4", "#00CED1", "#FF6347", "#9370DB"]
+                    },
+                    shape: {
+                        type: ["circle", "square", "triangle"]
+                    },
+                    size: {
+                        value: 6,
+                        random: true
+                    },
+                    move: {
+                        enable: true,
+                        speed: 3,
+                        direction: "bottom",
+                        random: true,
+                        straight: false,
+                        outModes: {
+                            default: "out"
+                        }
+                    },
+                    opacity: {
+                        value: 0.7,
+                        random: true
+                    }
+                }
+            });
         }
 
         // Function to proceed to gifts
         function proceedToGifts() {
             document.getElementById('warningModal').style.display = 'none';
             document.getElementById('mainContent').style.display = 'block';
+        }
+
+        // Function to open gift modal
+        function openGiftModal(title, description) {
+            document.getElementById("giftTitle").innerText = title;
+            document.getElementById("giftDescription").innerText = description;
+            document.getElementById("giftModal").style.display = "flex";
+        }
+
+        // Function to close gift modal
+        function closeGiftModal() {
+            document.getElementById("giftModal").style.display = "none";
         }
     </script>
 </body>
