@@ -3,78 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adam's Birthday Invitation</title>
+    <title>Birthday Itinerary - Adam's Special Day!</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="itinerary.css">
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
     <video autoplay muted loop id="myVideo">
         <source src="img/bg2.mp4" type="video/mp4">
     </video>
-
-    <div class="envelope-container" id="envelopeContainer">
-        <div class="envelope" id="envelope">
-            <div class="message-box">
-                <p>Will you join me for your birthday celebration?</p>
-                <button class="response-btn" onclick="openEnvelope()">Yes</button>
-                <button class="response-btn" onclick="openEnvelope()">Yes</button>
+    <header>
+        <nav>
+            <div class="logo">T&A</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#toAdam.html">To: Adam</a>
+                <a href="itinerary.html">Itinerary</a>
+                <a href="friends.html">Friends</a>
             </div>
-        </div>
-    </div>
+        </nav>
+    </header>
 
-    <main id="mainContent" class="hidden">
-        <section class="invitation">
-            <div class="invitation-box">
-                <h1>You Are Invited</h1>
-                <h2>Adam's Birthday Celebration</h2>
-                <p>Join us for a day filled with love, laughter, and surprises in honor of Adam's special day.</p>
-                <p class="date">February 20, 2025</p>
-                <p class="location">Location: Secret Venue (Details to Follow)</p>
-            </div>
-        </section>
-
-        <section class="itinerary">
-            <h1>Itinerary</h1>
+    <main>
+        <div class="itinerary-container">
+            <h1>Birthday Plan</h1>
+            <h3>Goal: to ensure that you feel loved and happy !</h3>
+            <p> I'm so sorry, Sayang, but you’ll have to pick me and a few others up to kick off the celebration! 
+                Don’t worry, the details are at the bottom of this page.  </p>  
             <div class="timeline">
                 <div class="timeline-item">
-                    <h2>10:00 AM - Morning Surprise</h2>
-                    <p>Special breakfast prepared with love, followed by a heartfelt gift reveal.</p>
+                    <div class="time">9:00 AM</div>
+                    <div class="event">
+                        <i class="fas fa-coffee"></i>
+                        <h3>Morning Drive with Harris</h3>
+                        <p>Sadly, your day starts with Harris to pick us all up!</p>
+                    </div>
                 </div>
+
                 <div class="timeline-item">
-                    <h2>12:00 PM - Lunch Outing</h2>
-                    <p>Surprise lunch at your favorite restaurant with close friends and family.</p>
+                    <div class="time">11:00 AM</div>
+                    <div class="event">
+                        <i class="fas fa-gift"></i>
+                        <h3>Drive to a Secret Place</h3>
+                        <p>The drive will take around 30 minutes to an hour, I'll reveal the location later! Hihi, be patient!</p>
+                    </div>
                 </div>
+
                 <div class="timeline-item">
-                    <h2>3:00 PM - Adventure Time</h2>
-                    <p>Exciting activity or surprise planned just for you.</p>
+                    <div class="time">12:00 PM</div>
+                    <div class="event">
+                        <i class="fas fa-utensils"></i>
+                        <h3>Arriving at the Secret Place</h3>
+                        <p>Time to set up, splash around in the water, and cook up something yummy!</p>
+                    </div>
                 </div>
+
                 <div class="timeline-item">
-                    <h2>7:00 PM - Dinner Celebration</h2>
-                    <p>Intimate dinner with loved ones, cake cutting, and memorable moments.</p>
+                    <div class="time">3:00 PM</div>
+                    <div class="event">
+                        <i class="fas fa-surprise"></i>
+                        <h3>After the Water Fun</h3>
+                        <p>Time to change into fresh clothes and get cozy!</p>
+                    </div>
                 </div>
+
                 <div class="timeline-item">
-                    <h2>9:00 PM - Evening Memories</h2>
-                    <p>Photo sessions, storytelling, and celebrating another beautiful year of your life.</p>
+                    <div class="time">5:00 PM</div>
+                    <div class="event">
+                        <i class="fas fa-birthday-cake"></i>
+                        <h3>Dropping Everyone Home</h3>
+                        <p>Unfortunately, all good things must come to an end but I promise this birthday will be unforgettable!</p>
+                    </div>
                 </div>
             </div>
-            <a href="toAdam.html" class="cta-button">Special Message</a>
-        </section>
+        </div>
+
+        <button id="details-btn">Details</button>
+        <div id="details-popup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn">&times;</span>
+                
+                <h2>Details for the Birthday</h2>
+                <h3> Place:</h3>
+                <p>Secret hihihi</p>
+                <h3> Attire</h3>
+                <p>Casual and comfortable. Bring an extra change of clothes for water activities.</p>
+                <h3> What to Bring</h3>
+                <ul class="neat-list">
+                    <li>Towel</li>
+                    <li>Sunscreen</li>
+                    <li>Flip-flops</li>
+                    <li>A small bag for personal items</li>
+                    <li>A plastic bag for wet clothes</li>
+                    <li>A fun spirit! 🎉</li>
+                </ul>
+                <h3> Menu</h3>
+                <ul class="neat-list">
+                    <li>Breakfast: Egg Sandwich</li>
+                    <li>Lunch: Secret</li>
+                    <li>Refreshing Drinks</li>
+                    <li>You can bring your own snacks too !!</li>
+                </ul>
+            </div>
+        </div>
     </main>
 
     <footer>
-        <p>Made with love for Adam by Natasha</p>
+        <p>Made with 𖹭 for Adam by Natasha</p>
+        
     </footer>
+
+    <script>
+        // Add animation when timeline items come into view
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Popup functionality
+        const detailsBtn = document.getElementById('details-btn');
+        const detailsPopup = document.getElementById('details-popup');
+        const closeBtn = document.querySelector('.close-btn');
+
+        detailsBtn.addEventListener('click', () => {
+            detailsPopup.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            detailsPopup.style.display = 'none';
+        });
+    </script>
+
+<style>
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        width: 320px;
+        text-align: center;
+    }
+    .close-btn {
+        cursor: pointer;
+        font-size: 20px;
+        position: absolute;
+        top: 10px;
+        right: 15px;
+    }
+    #details-btn {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background: #0a192f;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .neat-list {
+        list-style: none;
+        padding: 0;
+    }
+    .neat-list li {
+        text-align: center;
+        padding: 5px 0;
+    }
+</style>
 </body>
-<script> 
-    function openEnvelope() {
-    const envelopeContainer = document.getElementById('envelopeContainer');
-    const mainContent = document.getElementById('mainContent');
-    
-    // Hide envelope and show main content
-    envelopeContainer.style.display = 'none';
-    mainContent.classList.remove('hidden');
-}
-</script>
 </html>

@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* Inherit main page styles */
+body, #myVideo, header, nav, .logo, .nav-links, footer {
+    /* Keep all the existing styles from your main CSS */
+    /* These styles are inherited from your main CSS file */
+}
+
+.itinerary-container {
+    max-width: 800px;
+    margin: 120px auto 40px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.itinerary-container h1 {
+    text-align: center;
+    color: #0a192f;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: #0a192f;
+    border-radius: 2px;
+}
+
+.timeline-item {
+    margin-bottom: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.timeline-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.time {
+    width: 120px;
+    text-align: right;
+    padding-right: 2rem;
+    color: #0a192f;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.event {
+    width: 300px;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-left: 2rem;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.event:hover {
+    transform: translateY(-5px);
+}
+
+.event::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background: #0a192f;
+    border-radius: 50%;
+}
+
+.event i {
+    font-size: 1.5rem;
+    color: #0a192f;
+    margin-bottom: 0.5rem;
+}
+
+.event h3 {
+    color: #0a192f;
+    margin-bottom: 0.5rem;
+}
+
+.event p {
+    color: #666;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .itinerary-container {
+        margin: 100px 20px 40px;
+        padding: 1rem;
+    }
+
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 45px;
+    }
+
+    .time {
+        width: 100%;
+        text-align: left;
+        padding-right: 0;
+        padding-bottom: 0.5rem;
+    }
+
+    .event {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .event::before {
+        left: -31px;
+    }
+}
