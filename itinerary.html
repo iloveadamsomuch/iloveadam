@@ -3,52 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adam's Birthday Itinerary</title>
+    <title>Adam's Birthday Invitation</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="itinerary.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <video autoplay muted loop id="myVideo">
         <source src="img/bg2.mp4" type="video/mp4">
     </video>
 
-    <header>
-        <nav>
-            <div class="logo">T&A</div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="#about">About Us</a>
-                <a href="#memory-gallery">Gallery</a>
-                <a href="#contact">Contact</a>
+    <div class="envelope-container" id="envelopeContainer">
+        <div class="envelope" id="envelope">
+            <div class="message-box">
+                <p>Will you join me for your birthday celebration?</p>
+                <button class="response-btn" onclick="openEnvelope()">Yes</button>
+                <button class="response-btn" onclick="openEnvelope()">Yes</button>
             </div>
-        </nav>
-    </header>
+        </div>
+    </div>
 
-    <main>
+    <main id="mainContent" class="hidden">
+        <section class="invitation">
+            <div class="invitation-box">
+                <h1>You Are Invited</h1>
+                <h2>Adam's Birthday Celebration</h2>
+                <p>Join us for a day filled with love, laughter, and surprises in honor of Adam's special day.</p>
+                <p class="date">February 20, 2025</p>
+                <p class="location">Location: Secret Venue (Details to Follow)</p>
+            </div>
+        </section>
+
         <section class="itinerary">
-            <h1>Adam's Birthday Celebration</h1>
+            <h1>Itinerary</h1>
             <div class="timeline">
                 <div class="timeline-item">
                     <h2>10:00 AM - Morning Surprise</h2>
-                    <p>Special breakfast prepared with love, followed by a heartfelt gift reveal</p>
+                    <p>Special breakfast prepared with love, followed by a heartfelt gift reveal.</p>
                 </div>
                 <div class="timeline-item">
                     <h2>12:00 PM - Lunch Outing</h2>
-                    <p>Surprise lunch at your favorite restaurant with close friends and family</p>
+                    <p>Surprise lunch at your favorite restaurant with close friends and family.</p>
                 </div>
                 <div class="timeline-item">
                     <h2>3:00 PM - Adventure Time</h2>
-                    <p>Exciting activity or surprise planned just for you</p>
+                    <p>Exciting activity or surprise planned just for you.</p>
                 </div>
                 <div class="timeline-item">
                     <h2>7:00 PM - Dinner Celebration</h2>
-                    <p>Intimate dinner with loved ones, cake cutting, and memorable moments</p>
+                    <p>Intimate dinner with loved ones, cake cutting, and memorable moments.</p>
                 </div>
                 <div class="timeline-item">
                     <h2>9:00 PM - Evening Memories</h2>
-                    <p>Photo sessions, storytelling, and celebrating another beautiful year of your life</p>
+                    <p>Photo sessions, storytelling, and celebrating another beautiful year of your life.</p>
                 </div>
             </div>
             <a href="toAdam.html" class="cta-button">Special Message</a>
@@ -56,7 +64,17 @@
     </main>
 
     <footer>
-        <p>Made with 𖹭 for Adam by Natasha</p>
+        <p>Made with love for Adam by Natasha</p>
     </footer>
 </body>
+<script> 
+    function openEnvelope() {
+    const envelopeContainer = document.getElementById('envelopeContainer');
+    const mainContent = document.getElementById('mainContent');
+    
+    // Hide envelope and show main content
+    envelopeContainer.style.display = 'none';
+    mainContent.classList.remove('hidden');
+}
+</script>
 </html>
