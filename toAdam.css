@@ -14,30 +14,21 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: none; /* Ensure no background image */
+    background: url('img/first\ baju\ raya\ hunting.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
-.wishes-hero video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -2;
-    object-fit: cover;
-}
-
-/* Dark overlay */
+/* Dark overlay 
 .wishes-hero::before {
     content: '';
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(16, 12, 51, 0.7);
-    z-index: -1;
-}
+    z-index: 0;
+}*/
 
 .hero-content {
     text-align: center;
@@ -45,6 +36,7 @@ body, html {
     padding: 20px;
     z-index: 1;
     font-family: 'Cormorant Garamond', serif;
+    position: relative;
 }
 
 .hero-content h1 {
@@ -152,7 +144,6 @@ body, html {
     border-radius: 10px;
 }
 
-
 /* Wishes Cards */
 .birthday-wishes {
     padding: 4rem 2rem;
@@ -197,24 +188,23 @@ body, html {
 }
 
 .center-card {
-    width: fit-content; /* Make it take full width */
-    max-width: 600px; /* Limit max width */
-    margin: 30px auto; /* Center horizontally */
-    font-size: 1.5rem; /* Make text bigger */
-    padding: 20px; /* Add space inside */
-    text-align: center; /* Center text */
+    width: fit-content;
+    max-width: 600px;
+    margin: 30px auto;
+    font-size: 1.5rem;
+    padding: 20px;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    grid-column: 1 / -1; /* If using CSS Grid */
-    float: none; /* Ensure no floating issues */  
+    grid-column: 1 / -1;
+    float: none;
 }
 
 .center-card i {
-    font-size: 2.5rem; /* Make icon bigger */
+    font-size: 2.5rem;
 }
-
 
 /* Closing Message */
 .closing-message {
